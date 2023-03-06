@@ -2,17 +2,41 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [name, setName] = useState();
+  const [inputs, setInputs] = useState({});
 
-  const events = (e) => {
-    setName(e.target.value);
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(inputs);
   };
 
   return (
-    <div>
-      <input type="text" value={name} onChange={events}></input>
-      {name}
-    </div>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Enter your name:
+        <input
+          type="text"
+          name="username"
+          value={inputs.username || ""}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        Enter your age:
+        <input
+          type="number"
+          name="age"
+          value={inputs.age || ""}
+          onChange={handleChange}
+        />
+      </label>
+      <input type="submit" />
+    </form>
   );
 }
 
