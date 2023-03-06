@@ -1,14 +1,20 @@
 import "./App.css";
 
 function App() {
-  const Shoot = () => {
-    alert("Good Short");
-  };
-
+  const cars = [
+    { id: 1, brand: "Ford" },
+    { id: 2, brand: "BMW" },
+    { id: 3, brand: "Audi" },
+  ];
   return (
-    <div className="App">
-      <button onClick={Shoot}>Shoot</button>
-    </div>
+    <>
+      <h1>Who lives in my garage?</h1>
+      <ul>
+        {cars.map((car) => (
+          <div key={car.id}> brand={car.brand} </div>
+        ))}
+      </ul>
+    </>
   );
 }
 
