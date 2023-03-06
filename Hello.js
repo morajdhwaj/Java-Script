@@ -1,9 +1,15 @@
-const array = [1, 2, 3, 4, 5];
+const myVehicle = {
+  brand: "Ford",
+  model: "Mustang",
+  color: "red",
+};
 
-const arr = array.filter(myFunction);
+const updateMyVehicle = {
+  type: "car",
+  year: 2021,
+  color: "yellow",
+};
 
-function myFunction(a) {
-  return a > 3;
-}
+const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
 
-console.log(arr);
+console.log(myUpdatedVehicle);
