@@ -1,15 +1,7 @@
-const myVehicle = {
-  brand: "Ford",
-  model: "Mustang",
-  color: "red",
+const xx = (x, y) => {
+  return x * y;
 };
 
-const updateMyVehicle = {
-  type: "car",
-  year: 2021,
-  color: "yellow",
-};
+let z = xx(3, 4);
 
-const myUpdatedVehicle = { ...myVehicle, ...updateMyVehicle };
-
-console.log(myUpdatedVehicle);
+console.log(z);
