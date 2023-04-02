@@ -1,4 +1,7 @@
-const Moraj = (a, b) => a * b;
+const moraj = (x = 5, y = 5) => {
+  return x * y;
+};
 
-let m = Moraj(4, 5);
-console.log(m);
+let x = moraj();
+
+console.log(x);
